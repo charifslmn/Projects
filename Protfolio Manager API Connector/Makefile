@@ -1,0 +1,20 @@
+APP_NAME= "ILEVEL_CONNECTOR"
+APP_VERSION= V_3
+STAGE_DB= ILEVEL_CONNECTOR_STAGE
+STAGE_NAME=${STAGE_DB}.PUBLIC.ARTIFACTS
+WAREHOUSE=XS
+
+CONNECTION=cs
+
+.PHONY: build
+build:
+	python -m build
+
+.PHONY: dev_deploy
+deploy:
+	snowsql -f sql/deploy.sql -c $(CONNECTION) -D APP_NAME=${APP_NAME} -D STAGE_DB=${STAGE_DB} -D STAGE_NAME=${STAGE_NAME} -D APP_VERSION=${APP_VERSION} -o log_level=DEBUG
+test:
+	ls
+install:
+	snowsql -f sql/install.sql -c $(CONNECTION) -D token=${ILEVEL_TOKEN} -D token=${CLIENT_SECRET} -D token=${CLIENT_ID} -D APP_NAME=${APP_NAME} -D WAREHOUSE=${WAREHOUSE} -D APP_VERSION=${APP_VERSION} -D STAGE_NAME=${STAGE_NAME} -o log_level=DEBUG 
+	
