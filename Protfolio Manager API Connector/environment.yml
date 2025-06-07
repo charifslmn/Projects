@@ -1,8 +1,0 @@
-name: sf_env
-channels:
-  - snowflake
-dependencies:
-  - snowflake-snowpark-python
-  - snowflake-native-apps-permission
-  - streamlit=1.41.0
-  - cron-descriptor
