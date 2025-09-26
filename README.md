@@ -1,12 +1,4 @@
-# Crude Oil Spot Price Forecast Using LSTM RNN Model
 
-**Work-in-progress replication and extension of Lu et al. (2021), _“Analysis and forecasting of crude-oil price based on the variable-selection LSTM integrated model.”_**
-
-- Focused on directional accuracy of crude oil price forecasts.
-- Collected BMA-selected explanatory variables to replicate the study's data pipeline.
-- Next steps: implement grid search and rent NVIDIA GPUs to optimize model performance using a train/validation split.
-
----
 
 # Quantitative Analysis – Order Flow Imbalance for Trading Algorithms
 
